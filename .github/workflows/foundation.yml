@@ -1,0 +1,22 @@
+name: Foundation checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  documentation:
+    name: Validate repository foundation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Validate foundation docs and links
+        run: python3 scripts/validate-foundation.py
+      - name: Check read-only preflight script syntax
+        run: bash -n scripts/happi-preflight.sh
