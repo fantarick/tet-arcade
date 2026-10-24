@@ -1,0 +1,36 @@
+name: Feature request
+description: Propose a game feature, improvement, or technical experiment.
+title: "[Feature] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please write in English. Financial flows, staking, rewards and real-money wagering are out of scope for the current MVP.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What user need would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Outline the behavior and any simpler alternatives.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: How would we verify this works?
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Security, privacy, and blockchain implications
+      description: State known risks or write None.
+    validations:
+      required: true
