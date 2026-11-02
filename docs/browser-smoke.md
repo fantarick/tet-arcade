@@ -2,7 +2,7 @@
 
 The baseline Pulse Grid game is designed to run with no wallet, tokens, analytics,
 backends or public network endpoint. The smoke test in
-[\`scripts/browser-smoke.mjs\`](../scripts/browser-smoke.mjs) launches the local
+[`scripts/browser-smoke.mjs`](../scripts/browser-smoke.mjs) launches the local
 Vite server on **127.0.0.1 only** and exercises it in headless Chromium.
 
 ## Automated coverage
@@ -18,7 +18,7 @@ component tests. It validates:
 - No horizontal page overflow at 320, 390, 768 or 1280 CSS pixels.
 - The first cell gains focus when input unlocks, Tab advances focus, and
   Enter/Space activate cells.
-- \`prefers-reduced-motion: reduce\` suppresses cell transition animations.
+- `prefers-reduced-motion: reduce` suppresses cell transition animations.
 - No uncaught browser JavaScript errors or requests to external endpoints.
 
 Tests run with browser-generated synthetic game sequences and no real accounts,
@@ -30,15 +30,15 @@ for the tests to select cells without knowing the random seed.
 The required CI browser tooling is installed **ephemerally**, not added to the
 application's production dependencies or lockfile:
 
-\`\`\`bash
+```bash
 npm ci --ignore-scripts --no-audit --no-fund
 npm install --no-save --no-package-lock --ignore-scripts --no-audit --no-fund playwright@1.56.0
 npx --no-install playwright install chromium
 node scripts/browser-smoke.mjs
-\`\`\`
+```
 
 The GitHub-hosted job also installs missing Chromium OS packages through
-Playwright's \`--with-deps\` option. Do **not** install browser packages globally
+Playwright's `--with-deps` option. Do **not** install browser packages globally
 or run the GitHub-hosted system-setup command on Happi; the Pi is outside the
 scope of this test. The script itself never changes services or binds a public
 port.
