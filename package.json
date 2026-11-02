@@ -11,7 +11,7 @@
     "dev": "vite --host 127.0.0.1",
     "build": "tsc --noEmit && vite build",
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --test tests/game/pulse-grid.test.mjs",
+    "test": "node --experimental-strip-types --test tests/game/pulse-grid.test.mjs tests/web3/tet-balance-reader.test.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "test:ui": "vitest run"
   },

@@ -48,6 +48,7 @@ Development is intended to run through **Codex CLI on Happi (Raspberry Pi 5, ARM
 
 - [Product requirements](docs/product-requirements.md)
 - [Architecture and trust boundaries](docs/architecture.md)
+- [Mocked, provider-neutral TET balance-reader example](docs/mocked-tet-balance-reader.md)
 - [Roadmap](docs/roadmap.md)
 - [Development and Happi guidelines](docs/development.md)
 - [Architectural decisions](docs/decisions/0001-ethereum-first.md)
