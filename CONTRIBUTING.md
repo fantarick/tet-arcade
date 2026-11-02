@@ -9,6 +9,12 @@ Thank you for your interest in this independent, experimental Web3 gaming projec
 - Communicate **in English** on issues, pull requests, commits, documentation, UI copy, and code comments.
 - Be respectful; follow the [code of conduct](CODE_OF_CONDUCT.md).
 
+## Mandatory non-financial contribution policy
+
+All contributions must follow [the legal/product safety baseline](docs/legal-and-product-safety.md). Public gameplay is **free and walletless**. Do not contribute token-holder access, paid entry, deposits, token transfers, burning, staking, betting, monetary/convertible prizes, prize pools, live-wallet or real-RPC integration, financial promotion, or misleading Tectum affiliation. The existing mock balance reader is for offline tests only.
+
+Disclose any external service, personal-data collection, tracking, wallet capability, financial mechanic, game reward, third-party asset/license, or code path that could activate one. Missing or ambiguous disclosures block review. Passing CI is not legal clearance. A future change of scope requires a separate proposal and qualified legal/privacy review **before coding or release**; maintainer acceptance of an issue alone is not authorization.
+
 ## Working on changes
 
 1. Create a short-lived branch such as `feat/pulse-grid-engine`, `docs/clarify-wallet-flow`, or `fix/game-reset`.
@@ -20,7 +26,7 @@ Thank you for your interest in this independent, experimental Web3 gaming projec
 
 ## Proposals
 
-Good issues explain: user problem, proposed behavior, alternatives, acceptance criteria, testing approach, and any blockchain/security implications. Please do not introduce token prices, staking, payments, gambling, on-chain prizes, or external tracking without a separately approved proposal.
+Good issues explain: user problem, proposed behavior, alternatives, acceptance criteria, testing approach, and any blockchain/security implications. Do not introduce token prices, staking, payments, gambling, on-chain prizes, wallet gating, live RPC or external tracking into the application. Discuss speculative changes only in issues; they remain blocked until explicit maintainer authorization after qualified legal/privacy review.
 
 ## Security and privacy
 
