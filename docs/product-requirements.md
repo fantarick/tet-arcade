@@ -1,17 +1,17 @@
 # Product requirements: TET Arcade
 
-**Status:** Proposed MVP, October 2026. These are requirements, not implemented features.
+**Status:** Free-game MVP approved; financial/token-gated features paused as of November 2026. See [mandatory legal/product safety policy](legal-and-product-safety.md). These are product requirements, not legal authorizations.
 
 ## Problem and hypothesis
 
-Developers and TET holders currently lack a small, independent, documented game experiment that demonstrates read-only ERC-20 ownership gating. The hypothesis is that a fun free game plus an optional token-holder challenge can attract meaningful technical feedback without requiring token spending or relying on T12 capabilities that have not been validated.
+Developers and TET holders currently lack a small, independent, documented game experiment that demonstrates read-only ERC-20 ownership gating. The hypothesis is that a fun, free, walletless game plus isolated, offline blockchain research can attract meaningful technical feedback without requiring token purchase, ownership, spending or relying on T12 capabilities that have not been validated.
 
 This experiment must not be presented as evidence of token investment value or sustainable token demand.
 
 ## Users
 
 1. **Casual player:** plays without a wallet and without network connectivity once the app has loaded.
-2. **Ethereum wallet user:** optionally connects a wallet and views an accurate TET balance on the correct chain.
+2. **Offline technical researcher:** can test mock ERC-20 balance-reader behavior without real wallet connection, network calls or user holdings.
 3. **Community developer:** can run, test, modify, and extend the project using English-language documentation.
 4. **Project maintainer:** can review contributions, tests, risks, and deployment proposals.
 
@@ -29,7 +29,9 @@ This experiment must not be presented as evidence of token investment value or s
 
 The exact score formula, presentation timings, and failure/retry rule must be documented and covered by tests before M1 is accepted.
 
-## Optional TET Challenge (M3)
+## Previously proposed TET Challenge (M3) — ON HOLD, NOT APPROVED
+
+**Do not implement, enable or deploy any of the earlier experimental ideas in this section.** Holder-only game access, live wallet integration and real balance lookups require a separate professional legal/privacy review and explicit written maintainer approval; even holding a token without spending it is not automatically a free entry. The allowed standalone balance reader is **mock-only and isolated**.
 
 - Wallet connection is **optional**; free play remains permanently available.
 - Ethereum Mainnet only (chain ID `1`) for real TET balance inspection.
@@ -45,8 +47,8 @@ The exact score formula, presentation timings, and failure/retry rule must be do
 The experiment is worth continuing if:
 - New contributors can reproduce the application from the published instructions.
 - Players can finish a free game and understand the rules without wallet setup.
-- Feedback identifies at least one convincing reason to replay the game or use the optional challenge mode.
-- Automated tests cover the game engine and wallet failure paths.
+- Feedback identifies at least one convincing reason to replay the free game.
+- Automated tests cover the game engine and, separately, mocked balance-reader failure paths.
 
 Do not fabricate adoption numbers or confuse GitHub stars, token holdings, or code generation speed with product-market fit.
 
@@ -62,7 +64,7 @@ Do not fabricate adoption numbers or confuse GitHub stars, token holdings, or co
 
 | Risk | Mitigation |
 | --- | --- |
-| Token-gated feature is not useful | Prioritize free gameplay and request qualitative feedback |
+| Token-gated feature might create legal or privacy exposure | Keep token gating on hold; prioritize fully free, walletless play |
 | Browser gate can be bypassed | Treat only as demo; introduce server validation only if real authorization is needed |
 | Wallet/phishing concerns | No signing transactions, no secret requests, visible chain/contract source |
 | RPC outages or wrong network | Graceful failure and no impact on free play |
