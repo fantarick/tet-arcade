@@ -81,7 +81,7 @@ async function main() {
     assert.match(await page.title(), /TET Arcade.*Pulse Grid/);
     const cells = page.locator(".pulse-cell");
     assert.equal(await cells.count(), 25, "the grid must contain 25 cells");
-    assert.equal(await cells.filter({ enabled: true }).count(), 0, "cells must be locked during playback");
+    assert.equal(await page.locator(".pulse-cell:not(:disabled)").count(), 0, "cells must be locked during playback");
     assert.equal(await page.locator(".phase-indicator.phase-playback").count(), 1);
 
     // An explicitly optional text guide permits reproducible interaction even
@@ -95,14 +95,14 @@ async function main() {
       state: "visible",
       timeout: PLAYBACK_LIMIT_MS,
     });
-    assert.equal(await cells.filter({ enabled: true }).count(), 25);
+    assert.equal(await page.locator(".pulse-cell:not(:disabled)").count(), 25);
     await cells.nth(initial[0]).click();
     assert.match(await page.locator(".game-status").innerText(), /Cell 2 of 2/);
     await cells.nth(initial[1]).click();
 
     assert.equal(await page.locator(".scoreboard .stat-value").nth(0).innerText(), "02");
     assert.equal(await page.locator(".scoreboard .stat-value").nth(1).innerText(), "10");
-    assert.equal(await cells.filter({ enabled: true }).count(), 0, "next round must lock input");
+    assert.equal(await page.locator(".pulse-cell:not(:disabled)").count(), 0, "next round must lock input");
 
     // Restart before playback finishes. The old round must never unlock input
     // or overwrite the new attempt.
@@ -110,7 +110,7 @@ async function main() {
     assert.equal(await page.locator(".scoreboard .stat-value").nth(0).innerText(), "01");
     assert.equal(await page.locator(".scoreboard .stat-value").nth(1).innerText(), "0");
     assert.equal(await page.locator(".scoreboard .stat-value").nth(2).innerText(), "10");
-    assert.equal(await cells.filter({ enabled: true }).count(), 0);
+    assert.equal(await page.locator(".pulse-cell:not(:disabled)").count(), 0);
     const restarted = recordSequence(
       await page.locator(".sequence-guide p").nth(1).innerText(),
     );
@@ -121,7 +121,7 @@ async function main() {
     await cells.nth((restarted[0] + 1) % 25).click();
     await page.locator(".phase-indicator.phase-lost").waitFor();
     assert.match(await page.locator(".game-status").innerText(), /Game over/);
-    assert.equal(await cells.filter({ enabled: true }).count(), 0);
+    assert.equal(await page.locator(".pulse-cell:not(:disabled)").count(), 0);
     await page.getByRole("button", { name: "Try again" }).click();
     assert.equal(await page.locator(".phase-indicator.phase-playback").count(), 1);
 
