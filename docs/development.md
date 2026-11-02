@@ -2,13 +2,13 @@
 
 ## Current project state
 
-The repository currently contains project documentation and foundation validation tools. **The React application is not yet scaffolded** and there is no `npm install` step to perform at M0. See [issue #3](https://github.com/fantarick/tet-arcade/issues/3).
+The React + TypeScript application is available in the repository as an early prototype. Install project-local dependencies with `npm ci --ignore-scripts` only after completing the read-only Happi preflight and confirming a suitable workspace. For setup and controls, see [playable app instructions](playable-app.md) and [issue #3](https://github.com/fantarick/tet-arcade/issues/3).
 
 ## Read-only Happi preflight
 
 Happi is the intended primary coding host (Raspberry Pi 5, ARM64). The project owner already runs other workloads there. Do **not** provision or modify any service as part of a read-only assessment.
 
-From a clone of this repository on Happi, after checking out the project foundation branch:
+From an authenticated clone of the relevant review branch on Happi, once it has been reviewed:
 
 ```bash
 bash scripts/happi-preflight.sh
@@ -36,9 +36,9 @@ A successful script check is not proof that Happi has enough free resources for 
 
 No instruction here authorizes changing the agent's sandbox, running `sudo`, installing global dependencies, opening inbound ports, editing Cloudflare/Tailscale, or deploying services.
 
-## Local preview later
+## Local preview
 
-When the application scaffold exists, Vite should bind to `127.0.0.1` by default. A private temporary SSH port-forward may be used for review after a separate check that the port is available. Do not expose a development server over a public tunnel, LAN-wide bind, or DNS record.
+The Vite application explicitly binds to `127.0.0.1` by default. A private temporary SSH port-forward may be used for review after a separate check that the port is available. Do not expose a development server over a public tunnel, LAN-wide bind, or DNS record.
 
 ## Reporting and language
 

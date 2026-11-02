@@ -2,9 +2,9 @@
 
 **An independent, open-source Web3 gaming playground exploring TET (ERC-20) token-gated games and agent-assisted development.**
 
-> **Project status:** Foundation / planning (M0). There is no playable release or live deployment yet.
+> **Project status:** Early browser prototype. The free game is implemented in source, but manual accessibility/browser validation and any public deployment are still pending.
 
-TET Arcade is an experimental collection of browser games. The first game, **Pulse Grid**, will be playable for free and offline. In a later phase, an optional **TET Challenge** mode may check an Ethereum wallet's TET balance without asking anyone to spend, deposit, or stake tokens.
+TET Arcade is an experimental collection of browser games. The first game, **Pulse Grid**, is playable for free without any wallet; no blockchain service is required. In a later phase, an optional **TET Challenge** mode may check an Ethereum wallet's TET balance without asking anyone to spend, deposit, or stake tokens.
 
 **Independent project:** TET Arcade is a community experiment, **not** an official Tectum or CrispMind product, endorsement, or partnership. TET Arcade does not issue TET, handle custody, or provide investment advice.
 
@@ -21,7 +21,7 @@ A functioning demo would not prove demand for TET, value for its token holders, 
 
 | Mode | Wallet | TET required | Status |
 | --- | --- | --- | --- |
-| Pulse Grid — Free | No | No | Planned (M1) |
+| Pulse Grid — Free | No | No | Implemented (M1 prototype); manual QA pending |
 | Connect wallet and inspect TET balance | Optional | No | Planned (M2) |
 | Pulse Grid — TET Challenge | Yes | Experimental threshold: 1 TET held | Planned (M3) |
 
@@ -40,7 +40,7 @@ The first integration targets **Ethereum Mainnet (chain ID 1)** and an existing 
 
 ## Technology direction
 
-Planned: React + Vite + TypeScript for the application, a pure TypeScript game engine, Viem/Wagmi for future read-only Ethereum integration, Vitest for unit tests, and GitHub-hosted CI. The application scaffold has **not** been committed yet; see [issue #3](https://github.com/fantarick/tet-arcade/issues/3). No package installation is necessary to review the current foundation.
+The prototype uses **React + Vite + TypeScript**, a pure TypeScript game engine, built-in Node.js tests, and GitHub-hosted CI. Viem/Wagmi are **future** options for read-only Ethereum integration, not installed in the current app. See [local playable setup](docs/playable-app.md) and [issue #3](https://github.com/fantarick/tet-arcade/issues/3).
 
 Development is intended to run through **Codex CLI on Happi (Raspberry Pi 5, ARM64)** in an isolated workspace. The machine's existing services are out of scope. See [development setup](docs/development.md) and the [Happi preflight issue](https://github.com/fantarick/tet-arcade/issues/2).
 

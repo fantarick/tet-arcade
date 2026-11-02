@@ -1,6 +1,6 @@
 # Architecture and trust boundaries
 
-**Status:** Proposed; application code is not yet implemented.
+**Status:** M1 browser prototype implemented; manual browser QA remains pending. The blockchain adapter is not yet implemented.
 
 ## Separation of concerns
 
@@ -17,20 +17,20 @@ Browser (React + TypeScript)
 
 The game engine never imports a wallet library or makes HTTP/RPC requests. A missing wallet, chain mismatch, or RPC outage cannot block free gameplay. A future T12 integration would be **another independently evaluated adapter**, not an assumed drop-in replacement.
 
-## Planned repository shape
+## Current repository shape
 
 ```text
 src/
-  game/        # deterministic state and rule modules
-  components/  # accessible game presentation
-  web3/        # optional chain-specific adapter
-  app/         # application wiring
-tests/         # pure game tests, mocked wallet tests
-docs/          # requirements, decisions, setup
-scripts/       # local audit / validation tooling
+  game/pulse-grid.ts  # pure deterministic game rules
+  App.tsx             # accessible game presentation and playback
+  main.tsx            # React application entrypoint
+  styles.css          # responsive styling
+tests/game/            # Node.js game-engine tests
+docs/                  # requirements, decisions, setup
+scripts/               # local audit / validation tooling
 ```
 
-The scaffold in [issue #3](https://github.com/fantarick/tet-arcade/issues/3) may refine this layout before implementation.
+A separate `src/web3/` adapter can be introduced in [issue #6](https://github.com/fantarick/tet-arcade/issues/6) after the browser app is reviewed.
 
 ## Contracts, chains, and data
 
