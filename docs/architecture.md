@@ -1,6 +1,6 @@
 # Architecture and trust boundaries
 
-**Status:** M1 browser app implemented on a reviewable feature branch. The blockchain adapter remains proposed.
+**Status:** M1 browser prototype implemented; manual browser QA remains pending. The blockchain adapter is not yet implemented.
 
 ## Separation of concerns
 
