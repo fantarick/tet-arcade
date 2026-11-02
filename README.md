@@ -2,7 +2,7 @@
 
 **An independent, open-source Web3 gaming playground exploring TET (ERC-20) token-gated games and agent-assisted development.**
 
-> **Project status:** A playable free Pulse Grid prototype is proposed in a reviewable branch. No public deployment or production release exists.
+> **Project status:** Early browser prototype. The free game is implemented in source, but manual accessibility/browser validation and any public deployment are still pending.
 
 TET Arcade is an experimental collection of browser games. The first game, **Pulse Grid**, is playable for free without any wallet; no blockchain service is required. In a later phase, an optional **TET Challenge** mode may check an Ethereum wallet's TET balance without asking anyone to spend, deposit, or stake tokens.
 
@@ -21,7 +21,7 @@ A functioning demo would not prove demand for TET, value for its token holders, 
 
 | Mode | Wallet | TET required | Status |
 | --- | --- | --- | --- |
-| Pulse Grid — Free | No | No | Implemented on a reviewable branch (M1) |
+| Pulse Grid — Free | No | No | Implemented (M1 prototype); manual QA pending |
 | Connect wallet and inspect TET balance | Optional | No | Planned (M2) |
 | Pulse Grid — TET Challenge | Yes | Experimental threshold: 1 TET held | Planned (M3) |
 
