@@ -1,0 +1,39 @@
+# One-time lockfile generation; remove this workflow after package-lock.json lands.
+name: Bootstrap npm lockfile
+
+on:
+  push:
+    branches:
+      - feat/m1-playable-react-app
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    if: github.repository == 'fantarick/tet-arcade'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out exact branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Use Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Generate lockfile and commit once
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f package-lock.json ]; then
+            echo "Lockfile already exists. No action required."
+            exit 0
+          fi
+          npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package-lock.json
+          git commit -m "chore: lock React app dependencies"
+          git push origin HEAD:feat/m1-playable-react-app
