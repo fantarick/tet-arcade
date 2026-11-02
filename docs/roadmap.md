@@ -8,11 +8,15 @@
 | M0 / Happi audit | Read-only host audit and isolation plan | [#2](https://github.com/fantarick/tet-arcade/issues/2) | Not started |
 | M0 / App scaffold | React/TypeScript baseline, lockfile, hosted CI | [#3](https://github.com/fantarick/tet-arcade/issues/3) | Implemented in PR #11; QA pending |
 | M1 / Engine | Deterministic Pulse Grid rules and tests | [#4](https://github.com/fantarick/tet-arcade/issues/4) | Merged via PR #10 |
-| M1 / UI | Responsive, accessible browser game | [#5](https://github.com/fantarick/tet-arcade/issues/5) | In review branch |
-| M2 / Web3 | Read-only wallet and TET balance | [#6](https://github.com/fantarick/tet-arcade/issues/6) | Not started |
-| M3 / Token gating | Optional holder challenge, free tier retained | [#7](https://github.com/fantarick/tet-arcade/issues/7) | Not started |
+| M1 / UI | Responsive browser game with Chromium smoke CI | [#5](https://github.com/fantarick/tet-arcade/issues/5) | Merged PRs #11 / #14; manual browser and accessibility checks pending |
+| M2 / Web3 | Isolated mocked TET reader; live wallet/RPC on hold | [#6](https://github.com/fantarick/tet-arcade/issues/6) | Mock-only PR #13 merged; no live integration authorized |
+| M3 / Token gating | Previously discussed holder challenge | [#7](https://github.com/fantarick/tet-arcade/issues/7) | **On hold, not approved for implementation or release** |
 | M4 / Community beta | Contributor onboarding and reviewed release proposal | [#8](https://github.com/fantarick/tet-arcade/issues/8) | Not started |
 | M5 / Exploration | Additional games and independently verified T12 research | Future proposal | Not committed |
+
+## Current product scope
+
+The approved release is a **free, non-financial, walletless game**. No purchase, holding or spending of TET is needed. No economic prizes, token promotion or real blockchain service is approved. Follow [the mandatory product safety policy](legal-and-product-safety.md) for every contribution and deployment. Previously proposed M2/M3 functionality is research-only unless a specialist legal/privacy review and explicit maintainer approval authorize a different scope.
 
 ## Release gates
 
