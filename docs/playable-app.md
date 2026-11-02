@@ -1,6 +1,6 @@
 # Playing Pulse Grid locally
 
-**Status:** Proposed playable application branch, pending PR review.
+**Status:** Early, un-deployed playable browser prototype. Automated tests exist; manual browser and screen-reader checks are pending.
 
 ## Setup
 
@@ -17,6 +17,7 @@ Run checks:
 
 ```bash
 npm test
+npm run test:ui
 npm run typecheck
 npm run build
 ```
@@ -32,6 +33,10 @@ For Happi, complete [the isolated, read-only preflight](https://github.com/fanta
 5. Use **Show sequence guide** for an optional readable text alternative.
 
 Scores are computed on the user's device. Personal best is stored with optional browser `localStorage` and gracefully falls back when storage is unavailable.
+
+## Automated UI test coverage
+
+`npm run test:ui` uses Vitest with a simulated browser and fake timers. It verifies React Strict Mode playback, input lockout, New game during playback, an accessible sequence guide, scoring, and timeout cleanup. These tests were added following community feedback on PR #11 and do not substitute for manual browser and screen-reader testing.
 
 ## Accessibility and limitations
 
