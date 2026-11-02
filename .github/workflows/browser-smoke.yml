@@ -1,0 +1,30 @@
+name: Browser smoke checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  chromium-smoke:
+    name: Playable game — Chromium smoke
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Configure Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install repository dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Install isolated browser test tooling
+        run: npm install --no-save --no-package-lock --ignore-scripts --no-audit --no-fund playwright@1.56.0
+      - name: Install CI Chromium
+        run: npx --no-install playwright install --with-deps chromium
+      - name: Test gameplay in headless Chromium
+        run: node scripts/browser-smoke.mjs
