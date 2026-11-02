@@ -1,13 +1,13 @@
 # Roadmap
 
-**Status as of November 2026:** M0/M1 features are proposed in open review branches; they are not yet merged or deployed.
+**Status as of November 2026:** M0 foundation and M1 game engine have been merged. The playable browser prototype passes automated CI; manual cross-browser and accessibility QA is still pending. No deployment has occurred.
 
 | Milestone | Outcome | Tracking | Current state |
 | --- | --- | --- | --- |
-| M0 / Foundation | Specs, agent rules, contribution policies, documentation checks | [#1](https://github.com/fantarick/tet-arcade/issues/1) | In progress |
+| M0 / Foundation | Specs, agent rules, contribution policies, documentation checks | [#1](https://github.com/fantarick/tet-arcade/issues/1) | Merged via PR #9 |
 | M0 / Happi audit | Read-only host audit and isolation plan | [#2](https://github.com/fantarick/tet-arcade/issues/2) | Not started |
-| M0 / App scaffold | React/TypeScript baseline, lockfile, hosted CI | [#3](https://github.com/fantarick/tet-arcade/issues/3) | In review branch |
-| M1 / Engine | Deterministic Pulse Grid rules and tests | [#4](https://github.com/fantarick/tet-arcade/issues/4) | [PR #10](https://github.com/fantarick/tet-arcade/pull/10) |
+| M0 / App scaffold | React/TypeScript baseline, lockfile, hosted CI | [#3](https://github.com/fantarick/tet-arcade/issues/3) | Implemented in PR #11; QA pending |
+| M1 / Engine | Deterministic Pulse Grid rules and tests | [#4](https://github.com/fantarick/tet-arcade/issues/4) | Merged via PR #10 |
 | M1 / UI | Responsive, accessible browser game | [#5](https://github.com/fantarick/tet-arcade/issues/5) | In review branch |
 | M2 / Web3 | Read-only wallet and TET balance | [#6](https://github.com/fantarick/tet-arcade/issues/6) | Not started |
 | M3 / Token gating | Optional holder challenge, free tier retained | [#7](https://github.com/fantarick/tet-arcade/issues/7) | Not started |
