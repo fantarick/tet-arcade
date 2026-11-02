@@ -1,6 +1,6 @@
 # Architecture and trust boundaries
 
-**Status:** M1 browser prototype implemented; manual browser QA remains pending. The blockchain adapter is not yet implemented.
+**Status:** M1 browser prototype and Chromium smoke checks implemented; manual cross-browser/assistive-technology QA remains pending. A standalone mock-only blockchain reader exists in tests; live integration and token gating are on hold under [the product safety policy](legal-and-product-safety.md).
 
 ## Separation of concerns
 
@@ -8,10 +8,9 @@
 Browser (React + TypeScript)
 ├── Game UI and accessibility
 ├── Pure, deterministic Pulse Grid engine
-├── Optional wallet UI (M2)
-│   └── Ethereum adapter (Wagmi / Viem, read-only)
-│       └── External Ethereum JSON-RPC provider
-│           └── Ethereum Mainnet ERC-20 TET balanceOf / decimals
+├── Mock-only TET balance-reader research (isolated, not imported by app)
+│   └── Fake HTTP read client responses for deterministic tests
+│       └── No live wallet, Ethereum RPC, transactions or real holdings
 └── Local-only, non-financial score and settings
 ```
 
@@ -30,13 +29,13 @@ docs/                  # requirements, decisions, setup
 scripts/               # local audit / validation tooling
 ```
 
-A separate `src/web3/` adapter can be introduced in [issue #6](https://github.com/fantarick/tet-arcade/issues/6) after the browser app is reviewed.
+A standalone, mock-driven `src/web3/` balance reader was merged in [PR #13](https://github.com/fantarick/tet-arcade/pull/13), but it is **not integrated into the game or connected to a live transport**. Further M2/M3 capabilities are on hold pending specialist legal/privacy review and explicit maintainer approval.
 
 ## Contracts, chains, and data
 
 - Target chain: Ethereum Mainnet (`1`), **not Tectum T12**.
 - Existing token: TET ERC-20 at `0x68A47Fe1CF42eBa4a030a10CD4D6a1031Ca3CA0a`.
-- Read-only calls: `balanceOf(address)` and `decimals()`, with minimal ABI.
+- Mock-only read test cases: `balanceOf(address)` and `decimals()`, with minimal ABI. Live RPC calls are not authorized in the application.
 - Token unit comparisons use bigint integers, e.g. threshold = `10 ** decimals` units for 1 TET. The exponentiation must be performed with bigint operands.
 - Reject or explicitly handle a wallet connected to the wrong network. Do not quietly query a different asset with the same name or symbol.
 - The selected RPC endpoint is external infrastructure: treat failures, incorrect responses, rate limits, and privacy trade-offs as normal operating conditions.
@@ -66,8 +65,8 @@ A future paid or server-protected feature would require a separately designed an
 
 1. M0: docs, lightweight checks, Happi read-only preflight.
 2. M1: browser-only game; network independent.
-3. M2: wallet connection and read-only chain queries.
-4. M3: optional client-side gating clearly marked demonstrative.
+3. M2: mock-only balance-reader research; live wallet/RPC work on hold.
+4. M3: holder-only gating on hold, **not authorized** for shipped gameplay.
 5. Later: separate review of server authorization, deployment, T12 compatibility, or any financial feature.
 
 See [ADR 0001](decisions/0001-ethereum-first.md), [ADR 0002](decisions/0002-happi-isolation.md), and [ADR 0003](decisions/0003-no-custody.md).
