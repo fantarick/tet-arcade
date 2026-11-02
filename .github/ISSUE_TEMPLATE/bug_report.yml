@@ -1,0 +1,36 @@
+name: Bug report
+description: Report a reproducible, non-security issue.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please write in English. For security vulnerabilities, follow SECURITY.md instead of filing a public exploit report.
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should happen?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include a minimal reproduction without wallet secrets or private information.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Environment and testing
+      description: Browser/platform, relevant logs after sanitization, tests performed.
+    validations:
+      required: false
