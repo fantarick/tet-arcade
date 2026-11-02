@@ -2,7 +2,7 @@
 
 ## Current project state
 
-A React + TypeScript application is proposed on a reviewable feature branch. Install project-local dependencies with `npm ci --ignore-scripts` only after completing the read-only Happi preflight and confirming a suitable workspace. For setup and controls, see [playable app instructions](playable-app.md) and [issue #3](https://github.com/fantarick/tet-arcade/issues/3).
+The React + TypeScript application is available in the repository as an early prototype. Install project-local dependencies with `npm ci --ignore-scripts` only after completing the read-only Happi preflight and confirming a suitable workspace. For setup and controls, see [playable app instructions](playable-app.md) and [issue #3](https://github.com/fantarick/tet-arcade/issues/3).
 
 ## Read-only Happi preflight
 
