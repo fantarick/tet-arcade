@@ -42,7 +42,13 @@ The PR author must disclose:
 
 The maintainer must **block the merge** when these disclosures are missing or when a PR contains prohibited/ambiguous functions. A clean CI run and AI review do **not** certify legal compliance. No automatic merging or deployment. Keep changes on review branches until a human owner has accepted the scope and tests.
 
-Configure GitHub `main` ruleset/branch protection to require a pull request, non-bypassable human approval and relevant passing checks; restrict direct pushes and force pushes where available. Repository documents alone cannot enforce this gate.
+### Single-maintainer review procedure (Option A)
+
+The GitHub `main` ruleset **must require a pull request**, all relevant passing CI checks (including an up-to-date branch), resolution of review discussions, and protection against force pushes/deletion, with no authorized bypass actors. Set **required approving reviews to 0** while the repository has a single maintainer. This allows the owner to merge without relying on a second, eligible human reviewer.
+
+**This is a deliberate procedural trade-off:** GitHub does not technically require or verify positive human approval when the required approval count is zero. The repository owner must therefore personally inspect every PR and add a dated, written final-review decision to its conversation **before** merging. Record (a) actual changed scope and prohibited-feature checks, (b) the four required CI results on the latest PR head and its alignment with `main`, (c) outstanding security, privacy, license, minors and financial risks, (d) resolution of relevant review threads, and (e) explicit **"Reviewed by maintainer — merge permitted"** or **"Merge blocked"**. A PR-template checkbox or AI-generated review cannot substitute for the owner's decision.
+
+Never merge or deploy automatically. Do not give agents permission to complete the final review or merge. If a trusted second maintainer becomes available later, reconsider a technically enforced required approval of at least one eligible independent reviewer. Documentation alone cannot enforce a human sign-off, and passing CI does not certify legal compliance.
 
 ## Public release gate
 

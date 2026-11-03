@@ -16,6 +16,7 @@ These instructions apply to all work on TET Arcade, including changes made by Co
 4. Run available checks locally and report exactly which commands ran and their results. If tests could not run, say so explicitly.
 5. Work on a feature branch, push changes, and open a reviewable pull request. **Do not merge, deploy, or enable auto-merge.**
 6. Never claim a code review or CI pass before the relevant check completes.
+7. This single-maintainer repository uses the [owner sign-off procedure](docs/legal-and-product-safety.md#single-maintainer-review-procedure-option-a): all changes to `main` must go through a PR with required passing CI. GitHub required approving reviews are intentionally set to zero; the owner must manually inspect and document final approval. **Do not write or impersonate the owner's sign-off. Do not merge or deploy.**
 
 ## Mandatory legal and product-safety gate
 

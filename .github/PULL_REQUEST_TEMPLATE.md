@@ -41,6 +41,18 @@ List actual commands and observed outcomes here.
 
 Describe anything not verified. Never claim unexecuted tests passed.
 
+## Maintainer final review — manual, not enforced by required approvals
+
+*To be completed by the human repository owner before merging, not by a contributor or AI agent.*
+
+- [ ] I personally inspected the complete diff and checked it against the product-safety policy.
+- [ ] All four required CI checks passed on the **latest** PR commit and the branch is up to date with `main`.
+- [ ] I assessed financial/prize, wallet/network, security, privacy/minors, brand and third-party licensing risks.
+- [ ] Relevant review discussions are resolved and unresolved limitations are documented.
+- [ ] I added a **dated final review comment** stating either `Reviewed by maintainer — merge permitted` or `Merge blocked`.
+
+**Important:** `Required approvals = 0` does not technically enforce this human sign-off. Do not merge or deploy automatically.
+
 ## Screenshots or demos
 
 Attach only if useful, sanitized, and free of personal information.

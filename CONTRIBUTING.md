@@ -30,7 +30,11 @@ See [Independent forks and experimental extensions](docs/legal-and-product-safet
 3. Make changes with tests, accessibility, offline support, and small Raspberry Pi development environments in mind.
 4. Run the checks available in the current project state. At M0, use `python3 scripts/validate-foundation.py` and `bash -n scripts/happi-preflight.sh`; later, follow application scripts documented after the scaffold lands.
 5. Open a PR and fill in the template. Include actual test evidence and note anything not tested.
-6. Wait for human review. Never bypass safety gates or merge your own AI-generated work automatically.
+6. Wait for the repository owner's explicit, written final review in the PR conversation. Never bypass safety gates or merge your own AI-generated work automatically.
+
+## Single-maintainer governance
+
+This repository currently uses the [single-maintainer review procedure](docs/legal-and-product-safety.md#single-maintainer-review-procedure-option-a). GitHub must require a PR, up-to-date passing CI, and resolved discussions, but **does not require an approving review** (`Required approvals = 0`). The owner must personally review each change and record a dated final decision before merging. Contributors and AI agents must not interpret a green CI or the absence of a required reviewer as permission to merge.
 
 ## Proposals
 
