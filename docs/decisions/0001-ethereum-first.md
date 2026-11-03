@@ -1,7 +1,13 @@
 # ADR 0001 — Begin with read-only Ethereum ERC-20 integration
 
-- **Status:** Accepted for planning
+- **Status:** Partially superseded on 2026-11-03 by [the free-play product-safety baseline](../legal-and-product-safety.md). Historical context only for any live wallet/RPC proposal.
 - **Date:** 2026-10-24
+
+## Current decision (2026-11-03)
+
+The independent, walletless browser game remains approved. Only offline, mock-driven, standalone ERC-20 research is currently allowed. The earlier plan to introduce a live read-only Ethereum adapter is **on hold and not authorized for implementation or release** in upstream TET Arcade. Future scope changes require qualified legal/privacy review and explicit maintainer approval. Independently operated MIT-compliant forks are separate projects, not endorsed upstream.
+
+The original decision is preserved below for historical reference and does **not** override the current policy.
 
 ## Context
 

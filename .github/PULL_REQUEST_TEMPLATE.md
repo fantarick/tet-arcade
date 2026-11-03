@@ -10,6 +10,18 @@ Closes #
 - What alternatives did you consider?
 - Does this affect game rules, wallet logic, network access, security, privacy, accessibility, or Happi resources?
 
+## Mandatory product and legal-safety review
+
+Read [the product-safety policy](https://github.com/fantarick/tet-arcade/blob/main/docs/legal-and-product-safety.md) (or its version on your PR branch). Public gameplay must remain free and walletless; standalone mocked balance-reader research must not become a live/app-integrated feature.
+
+- [ ] No fee, payment, wallet/token requirement, transaction, deposit, staking, burn, wager, lottery, loot box with value, economic prize, token distribution or investment promotion.
+- [ ] No live wallet, Ethereum RPC, token-holder gate, wallet identity or financial authorization is introduced into the game, including hidden or disabled-by-default code paths.
+- [ ] I disclose any new network requests, third-party dependencies, telemetry, cookies, user/minor data, assets or licensing implications; otherwise I explicitly state `None`.
+- [ ] I have not implied official affiliation with Tectum/CrispMind or any guaranteed TET price, demand or return.
+- [ ] I understand that passing automated tests does not establish legal compliance, and that ambiguous changes must wait for a human/legal review.
+
+**Financial, wallet, privacy, prizes, minors, branding or licensing implications (required; write None if not applicable):**
+
 ## Verification
 
 - [ ] Tests/checks were run and exact commands/results are included below.
@@ -28,6 +40,18 @@ List actual commands and observed outcomes here.
 **Not tested / limitations:**
 
 Describe anything not verified. Never claim unexecuted tests passed.
+
+## Maintainer final review — manual, not enforced by required approvals
+
+*To be completed by the human repository owner before merging, not by a contributor or AI agent.*
+
+- [ ] I personally inspected the complete diff and checked it against the product-safety policy.
+- [ ] All four required CI checks passed on the **latest** PR commit and the branch is up to date with `main`.
+- [ ] I assessed financial/prize, wallet/network, security, privacy/minors, brand and third-party licensing risks.
+- [ ] Relevant review discussions are resolved and unresolved limitations are documented.
+- [ ] I added a **dated final review comment** stating either `Reviewed by maintainer — merge permitted` or `Merge blocked`.
+
+**Important:** `Required approvals = 0` does not technically enforce this human sign-off. Do not merge or deploy automatically.
 
 ## Screenshots or demos
 

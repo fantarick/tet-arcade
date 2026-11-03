@@ -16,6 +16,19 @@ These instructions apply to all work on TET Arcade, including changes made by Co
 4. Run available checks locally and report exactly which commands ran and their results. If tests could not run, say so explicitly.
 5. Work on a feature branch, push changes, and open a reviewable pull request. **Do not merge, deploy, or enable auto-merge.**
 6. Never claim a code review or CI pass before the relevant check completes.
+7. This single-maintainer repository uses the [owner sign-off procedure](docs/legal-and-product-safety.md#single-maintainer-review-procedure-option-a): all changes to `main` must go through a PR with required passing CI. GitHub required approving reviews are intentionally set to zero; the owner must manually inspect and document final approval. **Do not write or impersonate the owner's sign-off. Do not merge or deploy.**
+
+## Mandatory legal and product-safety gate
+
+Read and follow [the legal/product safety baseline](docs/legal-and-product-safety.md) **before every change**, including automated or external PRs. The **only approved public product** is free gameplay with no wallet, TET balance, token holding, payment, deposit, staking, burn, financial prize, tradeable reward, investment claim or token-purchase prompt. Scores and non-transferable achievements must have no economic value.
+
+The standalone mock-only TET balance reader is allowed as isolated educational/test code. **Do not connect it to the production app, live RPC, wallet events, ownership gating, contracts or user data** without separate qualified legal/privacy review and explicit maintainer authorization. M2/M3 token-access plans are on hold; an issue or a successful CI run is not approval.
+
+For EVERY PR, inspect: financial or prize mechanics, live networks and wallet capabilities, user data/cookies/analytics, minors, third-party assets/licensing, claims of affiliation, and promotional content. Reject prohibited changes; hold ambiguous changes until human/legal review. Never merge or deploy automatically, or treat passing tests as legal clearance.
+
+## External forks versus upstream contributions
+
+The MIT license permits independently maintained forks; their behavior and compliance are outside the scope of this upstream policy. **Do not** treat a fork with real wallets, RPC or 1 TET gating as evidence that similar features are permitted in TET Arcade, or import its code here without the full policy gate. Do not endorse, advertise, or link users to financially integrated forks from official project channels. See [independent forks](docs/legal-and-product-safety.md#independent-forks-and-experimental-extensions).
 
 ## Happi isolation policy
 
@@ -31,7 +44,7 @@ Happi is a Raspberry Pi 5 with existing, unrelated services. Only operate in a d
 
 ## Blockchain and financial safety
 
-- Target Ethereum ERC-20 **read-only integration first**; T12 is exploratory and not assumed EVM-compatible.
+- Only isolated, mocked, provider-neutral Ethereum ERC-20 research is authorized; live wallet/RPC integration is on hold. T12 remains exploratory and is not assumed EVM-compatible.
 - Use the exact intended chain and independently verified token contract; validate chain ID and token metadata.
 - Use integer/bigint token units. No floating point for balances or thresholds.
 - No private keys, seed phrases, custody, real asset transfers, unlimited approvals, staking, wagers, paid entry, or rewards in M0-M3.
