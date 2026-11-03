@@ -1,7 +1,13 @@
 # ADR 0003 — No transfers, custody, wagers, or rewards in MVP
 
-- **Status:** Accepted for planning
+- **Status:** Partially superseded on 2026-11-03 by [the free-play product-safety baseline](../legal-and-product-safety.md). Historical context only for optional holder mode.
 - **Date:** 2026-10-24
+
+## Current decision (2026-11-03)
+
+No custody, payments, wagering or convertible rewards remain allowed in the upstream application. The earlier optional token mode and proposed **1 TET threshold are not approved**. Live wallet, RPC and holder-only features are on hold pending qualified legal/privacy review and an explicit upstream scope decision. Upstream remains free and walletless; MIT-compliant independent forks are not upstream features or endorsements.
+
+The original decision is preserved below as historical context, not an actionable requirement.
 
 ## Context
 

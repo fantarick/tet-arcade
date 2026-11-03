@@ -1,5 +1,7 @@
 # Mocked TET balance reader
 
+> **Safety boundary (2026-11-03):** This module is for isolated, offline, mock-driven educational tests only. No production import, live wallet, live RPC, wallet event wiring or holder gate is authorized in upstream TET Arcade. The current [product-safety baseline](legal-and-product-safety.md) overrides historical M2/M3 proposals.
+
 This example implements the narrow, provider-neutral task in [issue #12](https://github.com/fantarick/tet-arcade/issues/12), related to [issue #6](https://github.com/fantarick/tet-arcade/issues/6). It does not connect a wallet, supply an HTTP transport, or integrate the example into the playable game. Free play remains independent of Web3.
 
 ## Contract and state
@@ -41,17 +43,7 @@ await balances.selectAccount("0x1111111111111111111111111111111111111111");
 console.log(balances.getState()); // zero_balance, units: 0n, decimals: 8
 ```
 
-Wallet **selection events** belong to a separate integration, not to the read client. Its event handlers can delegate as follows:
-
-```ts
-const onAccountsChanged = (accounts: readonly string[]) => {
-  void balances.selectAccount(accounts[0] ?? null);
-};
-const onChainChanged = () => balances.invalidate();
-const onDisconnect = () => { void balances.selectAccount(null); };
-```
-
-The application owns event subscriptions and must remove them when unmounting. No handler redirects the configured HTTP reader to the injected wallet provider. A wallet can be disconnected or on another chain without changing where Mainnet reads go. A chain change clears the displayed result; the application can explicitly refresh the selected account through the same configured Mainnet reader.
+Wallet event subscriptions and any app-integrated account/chain handling are **out of scope** for this repository. No production wiring is authorized; use synthetic test events and offline fake request clients only.
 
 Each selection or invalidation advances a generation. Old responses and old rejections cannot replace newer state, even if they arrive after another account has completed. `selectAccount` resolves with no payload: after awaiting it, consume the controller's **current** state rather than capturing a stale per-request balance.
 

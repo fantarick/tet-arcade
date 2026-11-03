@@ -25,6 +25,10 @@ The standalone mock-only TET balance reader is allowed as isolated educational/t
 
 For EVERY PR, inspect: financial or prize mechanics, live networks and wallet capabilities, user data/cookies/analytics, minors, third-party assets/licensing, claims of affiliation, and promotional content. Reject prohibited changes; hold ambiguous changes until human/legal review. Never merge or deploy automatically, or treat passing tests as legal clearance.
 
+## External forks versus upstream contributions
+
+The MIT license permits independently maintained forks; their behavior and compliance are outside the scope of this upstream policy. **Do not** treat a fork with real wallets, RPC or 1 TET gating as evidence that similar features are permitted in TET Arcade, or import its code here without the full policy gate. Do not endorse, advertise, or link users to financially integrated forks from official project channels. See [independent forks](docs/legal-and-product-safety.md#independent-forks-and-experimental-extensions).
+
 ## Happi isolation policy
 
 Happi is a Raspberry Pi 5 with existing, unrelated services. Only operate in a dedicated TET Arcade workspace and within permissions explicitly granted to the executing agent.

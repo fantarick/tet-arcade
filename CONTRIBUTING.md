@@ -15,6 +15,14 @@ All contributions must follow [the legal/product safety baseline](docs/legal-and
 
 Disclose any external service, personal-data collection, tracking, wallet capability, financial mechanic, game reward, third-party asset/license, or code path that could activate one. Missing or ambiguous disclosures block review. Passing CI is not legal clearance. A future change of scope requires a separate proposal and qualified legal/privacy review **before coding or release**; maintainer acceptance of an issue alone is not authorization.
 
+## Independent forks and alternative Web3 experiments
+
+The [MIT license](LICENSE) allows independent forks and modified distributions, provided its notice conditions are met. Developers who want to experiment with real wallets, live RPC or a 1 TET holder-only mode may do so in their **own separately maintained projects**, not by submitting such features to the official TET Arcade codebase. This contribution policy does not modify the MIT license or control independently operated forks.
+
+Such work is not approved, hosted, reviewed, maintained or legally cleared by this project. Fork maintainers must evaluate applicable law, privacy, security, third-party rights and potential financial/prize implications themselves. Separate repositories and disclaimers do not automatically eliminate legal risk. We recommend distinct project branding and explicit non-affiliation statements, without suggesting any official Tectum/CrispMind endorsement. No upstream promotion or directory of token-gated forks will be provided.
+
+See [Independent forks and experimental extensions](docs/legal-and-product-safety.md#independent-forks-and-experimental-extensions).
+
 ## Working on changes
 
 1. Create a short-lived branch such as `feat/pulse-grid-engine`, `docs/clarify-wallet-flow`, or `fix/game-reset`.

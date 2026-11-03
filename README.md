@@ -40,7 +40,7 @@ Isolated, **offline mocked research** refers to **Ethereum Mainnet (chain ID 1)*
 
 ## Technology direction
 
-The prototype uses **React + Vite + TypeScript**, a pure TypeScript game engine, built-in Node.js tests, and GitHub-hosted CI. Viem/Wagmi are **future** options for read-only Ethereum integration, not installed in the current app. See [local playable setup](docs/playable-app.md) and [issue #3](https://github.com/fantarick/tet-arcade/issues/3).
+The prototype uses **React + Vite + TypeScript**, a pure TypeScript game engine, built-in Node.js tests, and GitHub-hosted CI. Viem/Wagmi are **not installed or authorized for live integration** in the current app; any future consideration requires a new reviewed scope. See [local playable setup](docs/playable-app.md) and [issue #3](https://github.com/fantarick/tet-arcade/issues/3).
 
 Development is intended to run through **Codex CLI on Happi (Raspberry Pi 5, ARM64)** in an isolated workspace. The machine's existing services are out of scope. See [development setup](docs/development.md) and the [Happi preflight issue](https://github.com/fantarick/tet-arcade/issues/2).
 
@@ -65,9 +65,15 @@ All published repository content, including discussion on issues and pull reques
 
 All contributions, including AI-generated PRs, must comply with [the legal and product-safety baseline](docs/legal-and-product-safety.md): free, walletless gameplay; no financial prizes, token-gated access, real wallet services, asset transactions or claims about token investment performance. Any future financial or wallet feature is **research only** until separately approved following qualified legal/privacy advice. Tests do not establish regulatory compliance.
 
+## Independent forks
+
+The source code is licensed under [MIT](LICENSE), which permits independent forks and modifications subject to its license terms. Developers interested in live wallets, real Ethereum RPC or an optional 1 TET access threshold can investigate those ideas in **separately maintained forks**; they are **not part of, endorsed by, or approved for inclusion in official TET Arcade**.
+
+Fork operators must assess their own legal, privacy, security and intellectual-property obligations. A fork does not itself make wallet gating or financial features lawful. Distinct branding and clear non-affiliation notices are recommended. See [the independent-forks policy](docs/legal-and-product-safety.md#independent-forks-and-experimental-extensions).
+
 ## Safety
 
-Do not send TET, ETH, private keys, seed phrases, API secrets, or wallet permissions to this project. The MVP must not request token transfers, approvals, staking, or payments. A client-only token gate is a **demonstration**, not secure authorization for valuable services.
+Do not send TET, ETH, private keys, seed phrases, API secrets, or wallet permissions to this project. The MVP must not request token transfers, approvals, staking, or payments. The previously proposed client-only token gate is **not approved**; it would not provide secure authorization for valuable services.
 
 ## License
 

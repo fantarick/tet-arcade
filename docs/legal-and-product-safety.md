@@ -21,6 +21,18 @@ Tracking: [#15](https://github.com/fantarick/tet-arcade/issues/15).
 - Do not add a feature flag, hidden pathway or dependency that activates prohibited financial functionality in a production bundle.
 - Any exceptional proposal requires a separate issue, a written risk assessment, specialist Italian/EU legal and privacy review as appropriate, and explicit maintainer approval **before implementation or deployment**.
 
+## Independent forks and experimental extensions
+
+The source code is released under the [MIT license](../LICENSE). Third parties may fork, modify and distribute it under the license's terms, including preservation of its copyright and permission notices. This upstream product-safety policy governs what the TET Arcade maintainers accept and publish **in this repository**; it does not amend the MIT license or purport to bind independently operated forks.
+
+Developers interested in live wallet connections, real Ethereum RPC, optional 1 TET holder access or other Web3 experiments may explore these ideas in **independently maintained forks**. Such features remain prohibited in this upstream application. A fork is not an upstream-approved experiment, supported integration, official partnership, or legal clearance.
+
+Fork operators are responsible for independently assessing their actual implementation, deployment and jurisdictions, including applicable consumer, gambling/prize promotion, financial/crypto-asset, privacy, security, intellectual-property and minors' requirements. Merely using a separate repository or including a disclaimer does not eliminate legal exposure. Qualified legal/privacy review may be necessary **before** implementing or offering regulated features.
+
+For clarity and to avoid confusion, independent projects are encouraged to use distinct names, visual identities and descriptions; preserve the MIT license notices; avoid unauthorized third-party marks; and clearly state that they are not endorsed, maintained or operated by TET Arcade, Tectum or CrispMind. The MIT software license should not be presented as a trademark license.
+
+Official TET Arcade documentation, releases, PRs and promotional channels must not advertise, endorse, curate or direct users to buy tokens for use in third-party financially integrated forks. Upstream contributors should propose only changes that comply with the free, walletless product baseline.
+
 ## Required review gate on every contribution
 
 The PR author must disclose:

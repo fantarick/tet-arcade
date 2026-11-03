@@ -12,7 +12,7 @@ Closes #
 
 ## Mandatory product and legal-safety review
 
-Read [the product-safety policy](../docs/legal-and-product-safety.md). Public gameplay must remain free and walletless; standalone mocked balance-reader research must not become a live/app-integrated feature.
+Read [the product-safety policy](https://github.com/fantarick/tet-arcade/blob/main/docs/legal-and-product-safety.md) (or its version on your PR branch). Public gameplay must remain free and walletless; standalone mocked balance-reader research must not become a live/app-integrated feature.
 
 - [ ] No fee, payment, wallet/token requirement, transaction, deposit, staking, burn, wager, lottery, loot box with value, economic prize, token distribution or investment promotion.
 - [ ] No live wallet, Ethereum RPC, token-holder gate, wallet identity or financial authorization is introduced into the game, including hidden or disabled-by-default code paths.
