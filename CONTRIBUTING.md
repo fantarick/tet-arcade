@@ -28,7 +28,7 @@ See [Independent forks and experimental extensions](docs/legal-and-product-safet
 1. Create a short-lived branch such as `feat/pulse-grid-engine`, `docs/clarify-wallet-flow`, or `fix/game-reset`.
 2. Keep commits scoped and use concise imperative English commit subjects.
 3. Make changes with tests, accessibility, offline support, and small Raspberry Pi development environments in mind.
-4. Run the checks available in the current project state. At M0, use `python3 scripts/validate-foundation.py` and `bash -n scripts/happi-preflight.sh`; later, follow application scripts documented after the scaffold lands.
+4. Follow [the first-clone setup and checks](docs/playable-app.md), including Node.js 22.12+ and npm. On Happi, complete the read-only preflight before dependency installation or application startup. Run `npm test`, `npm run test:ui`, `npm run typecheck`, `npm run build`, `python3 scripts/validate-foundation.py` and `bash -n scripts/happi-preflight.sh`; if prerequisites are missing, record the blocked commands without reconfiguring the host.
 5. Open a PR and fill in the template. Include actual test evidence and note anything not tested.
 6. Wait for the repository owner's explicit, written final review in the PR conversation. Never bypass safety gates or merge your own AI-generated work automatically.
 
