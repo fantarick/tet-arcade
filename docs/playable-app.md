@@ -4,14 +4,24 @@
 
 ## Setup
 
-Use a machine with Node.js **22.12+** and npm; the application uses React, TypeScript, and Vite. This project runs without a blockchain account.
+Use a machine with Git, Node.js **22.12+** and npm; the application uses React, TypeScript, and Vite. The Node.js requirement matches `package.json`; application CI uses Node.js 22. No blockchain account, wallet, token, API key or private service is required.
+
+Start from a fresh clone and check the tools available in your shell:
+
+```bash
+git clone https://github.com/fantarick/tet-arcade.git
+cd tet-arcade
+node --version
+npm --version
+```
+
+On Happi, run `bash scripts/happi-preflight.sh` in the dedicated clone **before installing dependencies or starting the application**. Follow [the isolation guidelines](development.md) and [the preflight issue](https://github.com/fantarick/tet-arcade/issues/2); do not change host packages or services to resolve missing prerequisites.
+
+Once the prerequisites are available, install the dependencies pinned in the lockfile:
 
 ```bash
 npm ci --ignore-scripts
-npm run dev
 ```
-
-Visit `http://127.0.0.1:5173` **on the host running Vite**. The development and preview servers bind to loopback only; do not use `--host 0.0.0.0` or expose the process through a public tunnel.
 
 Run checks:
 
@@ -22,7 +32,22 @@ npm run typecheck
 npm run build
 ```
 
-For Happi, complete [the isolated, read-only preflight](https://github.com/fantarick/tet-arcade/issues/2) before any installation or running application services. The CI uses free GitHub-hosted runners; no self-hosted runner or Raspberry Pi service is required.
+For local gameplay, run `npm run dev` and visit `http://127.0.0.1:5173` **on the host running Vite**. The development and preview servers bind to loopback only; do not use `--host 0.0.0.0` or expose the process through a public tunnel.
+
+The CI uses free GitHub-hosted runners; no self-hosted runner or Raspberry Pi service is required. See [browser smoke checks](browser-smoke.md) for the separate Chromium smoke-test tooling; it is not needed for the checks above.
+
+## Missing prerequisites and reporting results
+
+If `node --version` reports a version below 22.12, or `npm --version` fails, stop before dependency installation and application checks. Use an already provisioned compatible contributor machine, or ask the host owner to review a separate setup proposal. Do not use global package installs or change Happi configuration as an onboarding workaround.
+
+Documentation checks need only Python 3 and Bash:
+
+```bash
+python3 scripts/validate-foundation.py
+bash -n scripts/happi-preflight.sh
+```
+
+When reporting an onboarding run, include the source commit, OS/architecture, Node/npm versions, exact commands and observed outcomes. Mark blocked or unexecuted commands explicitly; documentation checks or GitHub-hosted CI results do not establish that a local application dry run succeeded. Do not include private paths, credentials or unrelated host details.
 
 ## User interaction
 
@@ -48,4 +73,4 @@ Scores are computed on the user's device. Personal best is stored with optional 
 
 ## Privacy and Web3
 
-No wallet connection, token transfer, on-chain call, API key, visitor tracking, or third-party backend is present. The user's score remains in the browser. Ethereum TET balance integration is a **later** milestone [#6](https://github.com/fantarick/tet-arcade/issues/6), not a prerequisite for free play.
+No wallet connection, token transfer, on-chain call, API key, visitor tracking, or third-party backend is present. The user's score remains in the browser. Live Ethereum wallet and TET balance integration ([#6](https://github.com/fantarick/tet-arcade/issues/6)) is **ON HOLD — NOT AUTHORIZED** for implementation or release in the upstream game under [the mandatory product-safety policy](legal-and-product-safety.md). The standalone balance reader is for isolated, offline mocked tests only; it is not connected to the playable app. Free play requires no wallet or TET holdings.
